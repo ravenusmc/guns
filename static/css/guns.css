@@ -45,9 +45,20 @@ input {
   margin-bottom: 1em;
 }
 
-.test {
+.submit_fix {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+/* CSS for sign up page */
+.signup_main {
+  display: flex;
+  flex-direction: column;
+  background-image: url(https://source.unsplash.com/0hXH3EXo88Q);
+  height: 650px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 

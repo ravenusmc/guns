@@ -9,16 +9,15 @@ app = Flask(__name__)
 def login():
   return render_template('login.html', title='Login Page')
 
-@app.route('/signup')
-def signup():
-  return render_template('signup.html')
-
-
 #This function will bring the user to the home page.
 @app.route('/home')
 def home():
   return render_template('home.html')
 
+#This function brings the user to the sign up page.
+@app.route('/signup')
+def signup():
+  return render_template('signup.html')
 
 # set the secret key. keep this really secret:
 app.secret_key = 'n3A\xef(\xb0Cf^\xda\xf7\x97\xb1x\x8e\x94\xd5r\xe0\x11\x88\x1b\xb9'
