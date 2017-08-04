@@ -10,16 +10,45 @@ class User():
                                 password='pass',
                                 host='localhost',
                                 port=3306,
-                                database='movies')
+                                database='guns')
         self.cursor = self.conn.cursor()
 
-    def test(self):
-      age = 36
-      name = 'Mike Cuddy'
-      query = ("""SELECT * FROM names WHERE age = %s AND name = %s""")
-      self.cursor.execute(query, (age, name))
-      row = self.cursor.fetchone()
-      print(row)
+    def check(self, username, password):
+        #I first encode the password to utf-8
+        password = password.encode('utf-8')
+        print(password)
+        #Creating the query for the database
+        query = ("""SELECT * FROM users WHERE username = %s""")
+        self.cursor.execute(query, (username,))
+        row = self.cursor.fetchone()
+        #Here I check to see if the username is in the database.
+        if str(row) == 'None':
+            flag = False
+        #If the user name is in the database I move here to check if the password
+        #is valid.
+        else:
+            hashed = row[2].encode('utf-8')
+            if bcrypt.hashpw(password, hashed) == hashed:
+                flag = True
+            #This is a final catch all area. Basically if the password does not match 
+            #the user is not getting in. 
+            else:
+                flag = False
+        return flag
 
-test = User()
-test.test()
+    #This method will encrypt the password
+    def encrypt_pass(self, password):
+        password = password.encode('utf-8')
+        hashed = bcrypt.hashpw(password, bcrypt.gensalt())
+        return password, hashed
+
+    #This method will insert a new user into the database.
+    def insert(self, name, username, hashed):
+        self._SQL = """insert into users
+          (name, username, password)
+          values
+          (%s, %s, %s)"""
+        self.cursor.execute(self._SQL, (name, username, hashed))
+        self.conn.commit()
+
+#guns is the database, users is the table.
