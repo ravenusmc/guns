@@ -11,6 +11,13 @@ button {
   border-radius: 8px;
 }
 
+.sign_up_fix {
+  background-color: orange;
+  padding: 10px;
+  border-radius: 8px;
+  border-color: orange;
+}
+
 /* CSS for login page */
 
 .login_main {

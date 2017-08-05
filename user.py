@@ -16,7 +16,6 @@ class User():
     def check(self, username, password):
         #I first encode the password to utf-8
         password = password.encode('utf-8')
-        print(password)
         #Creating the query for the database
         query = ("""SELECT * FROM users WHERE username = %s""")
         self.cursor.execute(query, (username,))
@@ -26,7 +25,6 @@ class User():
             flag = False
             not_found = True
             password_no_match = False
-            sign_up = False
         #If the user name is in the database I move here to check if the password
         #is valid.
         else:
@@ -41,7 +39,7 @@ class User():
                 flag = False
                 not_found = False
                 password_no_match = True
-        return flag, not_found, password_no_match, sign_up
+        return flag, not_found, password_no_match
 
     #This method will encrypt the password
     def encrypt_pass(self, password):
