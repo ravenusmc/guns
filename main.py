@@ -16,7 +16,6 @@ def login():
         password = request.form['password']
         user = User()
         # #Checking to see if the user is in the database.
-        # flag, not_found, password_no_match, sign_up = user.check(username, password)
         flag, not_found, password_no_match = user.check(username, password)
         #Conditional statement to test if the user is a member of the site.
         if flag == True:
@@ -31,22 +30,6 @@ def login():
                 flash('Username not found, maybe sign up!')
             elif password_no_match:
                 flash('Password does not match! Maybe sign up!')
-
-
-            # if not_found and sign_up == False:
-            #     print(not_found)
-            #     print(sign_up)
-            #     print('if')
-            #     flash('Username not found, maybe sign up!')
-            #     return redirect(url_for('signup'))
-            # elif password_no_match:
-            #     print('elif')
-            #     flash('Password does not match! Maybe sign up!')
-            # else:
-            #     print('else')
-            #     print(not_found)
-            #     print(sign_up)
-            #     return redirect(url_for('signup'))
     return render_template('login.html', title='Login Page')
 
 #This function will bring the user to the home page.
@@ -71,6 +54,13 @@ def signup():
         #Letting them into the index Page
         return redirect(url_for('home'))
     return render_template('signup.html')
+
+#This function is what will log out the user.
+@app.route('/sign_out')
+def logout():
+    # remove the username from the session if it's there
+    session.pop('username', None)
+    return redirect(url_for('login'))
 
 # set the secret key. keep this really secret:
 app.secret_key = 'n3A\xef(\xb0Cf^\xda\xf7\x97\xb1x\x8e\x94\xd5r\xe0\x11\x88\x1b\xb9'
