@@ -24,17 +24,24 @@ class User():
         #Here I check to see if the username is in the database.
         if str(row) == 'None':
             flag = False
+            not_found = True
+            password_no_match = False
+            sign_up = False
         #If the user name is in the database I move here to check if the password
         #is valid.
         else:
             hashed = row[2].encode('utf-8')
             if bcrypt.hashpw(password, hashed) == hashed:
                 flag = True
+                not_found = False
+                password_no_match = False
             #This is a final catch all area. Basically if the password does not match 
             #the user is not getting in. 
             else:
                 flag = False
-        return flag
+                not_found = False
+                password_no_match = True
+        return flag, not_found, password_no_match, sign_up
 
     #This method will encrypt the password
     def encrypt_pass(self, password):

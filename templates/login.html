@@ -4,6 +4,12 @@
 
 <main class='login_main'>
 
+  {% for message in get_flashed_messages() %}
+    <div class="alert alert-danger" role="alert">
+      {{ message }}
+    </div>
+  {% endfor %}
+
   <div class='login_form_div'>
     <form method="POST">
       <h1 class='center'>Gun Study</h1>
