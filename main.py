@@ -55,6 +55,16 @@ def signup():
         return redirect(url_for('home'))
     return render_template('signup.html')
 
+#This function will bring the user to the page to examine the data. 
+@app.route('/examine')
+def examine():
+    return render_template('examine.html')
+
+#This function will take the user to the page to visualize the data.
+@app.route('/see')
+def see():
+   return render_template('see.html') 
+
 #This function is what will log out the user.
 @app.route('/sign_out')
 def logout():
