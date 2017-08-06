@@ -72,6 +72,14 @@ def logout():
     session.pop('username', None)
     return redirect(url_for('login'))
 
+### The routes below here will calculate the data science aspect part of this project ###
+@app.route('/by_year', methods=['POST'])
+def by_year():
+    a = request.form['a']
+    if a:
+        return jsonify(result = a)
+    return jsonify({'error' : 'Missing Data'})
+
 # set the secret key. keep this really secret:
 app.secret_key = 'n3A\xef(\xb0Cf^\xda\xf7\x97\xb1x\x8e\x94\xd5r\xe0\x11\x88\x1b\xb9'
 
