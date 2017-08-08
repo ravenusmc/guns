@@ -2,7 +2,9 @@
 from flask import Flask, session, jsonify, redirect, url_for, escape, render_template, request, flash
 
 #import in files that I created
+from data import *
 from user import *
+
 
 #Setting up Flask
 app = Flask(__name__)
@@ -76,8 +78,12 @@ def logout():
 @app.route('/by_year', methods=['POST'])
 def by_year():
     a = request.form['a']
+    a = int(a)
+    print(type(a))
     if a:
-        return jsonify(result = a)
+        gun = Gundata()
+        count = gun.year_count(a)
+        return jsonify(result = count)
     return jsonify({'error' : 'Missing Data'})
 
 # set the secret key. keep this really secret:

@@ -29,6 +29,13 @@ button {
   top: 0;
 }
 
+.center_button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 /* CSS for login page */
 
 .login_main {

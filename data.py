@@ -9,18 +9,11 @@ class Gundata():
 
     #This method will return the number of murders by the year that the user entered.
     def year_count(self, year):
-        #I have to convert the year to a string
-        # year_to_string = str(year)
+        #This line gets the all of the data points that match the year that the user entered.
         deaths_by_year = self.__data[self.__data.year == year]
-        #Getting the count of the UFO's in the year that the user specified.
+        #I then get the count of the number of values for that year. 
         count = len(deaths_by_year)
-        print(count)
-
-        # #Getting the state column
-        # years = self.__data[[1]]
-        # #Here I get the count of the number of deaths by year
-        # count = len(years[years.year == year])
-        # print(count)
+        return count
 
 
 test = Gundata()
