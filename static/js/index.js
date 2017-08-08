@@ -52,25 +52,14 @@ document.querySelector('#type_data').addEventListener('click', function(){
 
   let target = document.querySelector('#b').value;
 
-  console.log(target);
-  //debugger;
-  if (target != 'Homicide' || target != 'homicide') {
+  if (target !== 'Homicide' && target !== 'homicide' && target != 'Accidental' && target != 'accidental'
+  && target != 'Suicide' && target != 'suicide' && target != 'Undetermined' 
+  && target != 'undetermined') {
     alert('That is not the correct input!');
     alert('Please enter in either: Accidental, Homicide, Suicide, Undetermined');
     location.reload();
-  } else {
-    alert('equal')
   }
-  // if ( target != 'Homicide' || target != 'homicide' || target != 'Accidental' || target != 'accidental'
-  //   || target != 'Suicide' || target != 'suicide' || target != 'Undetermined' 
-  //   || target != 'undetermined'){
-  //   alert('That is not the correct input!');
-  //   alert('Please enter in either: Accidental, Homicide, Suicide, Undetermined');
-  //   location.reload();
-  // } else {
-  //   alert('yay');
-  // }
-
+  
 })
 
 
