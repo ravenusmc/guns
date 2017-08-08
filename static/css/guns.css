@@ -198,11 +198,9 @@ input {
   margin-right: 3%;
 }
 
-.examine_data_main > div {
+/*.examine_data_main > div {
   border: 2px solid blue;
-} 
-
-
+} */
 
 input {
   display: block;

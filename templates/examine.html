@@ -30,41 +30,30 @@
   <div>
     <h2 class='center'>Deaths By Year</h2>
     <p class='center'>(years are 2012-2014)</p>
-    <form>
-    <label>Enter Year: </label><input type="text" id='a' name='a'>
-    <p>Result: <span id="result">?</span></p>
-    <div class='center_button'>
-      <button id='year_data'>Get Data!</button>
-    </div>
+    <form id='by_year_form'>
+      <label>Enter Year: </label><input type="text" id='a' name='a'>
+      <p>Result: <span id="result">?</span></p>
+      <div class='center_button'>
+        <button id='year_data'>Get Data!</button>
+      </div>
     </form>
   </div>
 
   <div>
+    <h2 class='center'>Death Type</h2>
+    <p class='center'>(Accidental, Homicide, Suicide, Undetermined)</p>
+    <form id='by_type_form'>
+      <label>Death Type: </label><input type="text" id='b' name='b'>
+      <p>Result: <span id="result_death_type">?</span></p>
+      <div class='center_button'>
+        <button id='type_data'>Get Data!</button>
+      </div>
+    </form>
   </div>
   
   <div>
   </div>
 
 </main>
-
-<script type="text/javascript">
-
-  $(document).ready(function(){
-    $('form').bind('submit', function(event){
-      event.preventDefault();
-      $.ajax({
-        data: {
-          a: $('#a').val()
-        },
-        type: 'POST',
-        url: '/by_year',
-        success: function(data){
-          $('#result').text(data.result).show();
-        }
-      });
-    });
-  });
-
-</script>
 
 {% endblock %}

@@ -86,9 +86,61 @@ def by_year():
         return jsonify(result = count)
     return jsonify({'error' : 'Missing Data'})
 
+@app.route('/by_type', methods=['POST'])
+def by_type():
+    #Receiving the data from the ajax call
+    b = request.form['b']
+    #I capitalize the first word to ensure that what I receive is correct. 
+    b = b.title()
+    if b:
+    #     gun = Gundata()
+    #     count = gun.year_count(a)
+        return jsonify(result = b)
+    return jsonify({'error' : 'Missing Data'})
+
 # set the secret key. keep this really secret:
 app.secret_key = 'n3A\xef(\xb0Cf^\xda\xf7\x97\xb1x\x8e\x94\xd5r\xe0\x11\x88\x1b\xb9'
 
 #This line will actually run the app.
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
