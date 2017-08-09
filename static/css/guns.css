@@ -36,6 +36,12 @@ button {
   align-items: center;
 }
 
+footer {
+    text-align: center;
+    margin-top: 25px;
+    border-top: 3px solid white;
+}
+
 /* CSS for login page */
 
 .login_main {
@@ -186,26 +192,45 @@ input {
   width: 450px;
 }
 
+.examine_page_anchors {
+  color: black;
+}
+
+.examine_page_anchors:hover {
+  text-decoration: none;
+  color: rgb(242,146,12);
+}
+
 /* CSS for examine data page */
+.examine_heading {
+  margin-top: 100px;
+}
+
 .examine_data_main {
   margin-top: 100px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-auto-rows: minmax(100px, auto);
+  grid-gap: 10px;
   justify-items: stretch;
   align-items: stretch;
-  margin-left: 3%;
-  margin-right: 3%;
+  margin-left: 2%;
+  margin-right: 2%;
 }
-
-/*.examine_data_main > div {
-  border: 2px solid blue;
-} */
 
 input {
   display: block;
   width: 12em;
   margin-bottom: 1em;
+}
+
+.examine_pic_one_area {
+  background-image: url(https://source.unsplash.com/AEP4lyBafBs);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 500px;
+  margin-top: 10px;
 }
 
 /* CSS for media queries */

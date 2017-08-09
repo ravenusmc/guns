@@ -93,9 +93,9 @@ def by_type():
     #I capitalize the first word to ensure that what I receive is correct. 
     b = b.title()
     if b:
-    #     gun = Gundata()
-    #     count = gun.year_count(a)
-        return jsonify(result = b)
+        gun = Gundata()
+        count = gun.type_count(b)
+        return jsonify(result = count)
     return jsonify({'error' : 'Missing Data'})
 
 # set the secret key. keep this really secret:

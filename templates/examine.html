@@ -25,35 +25,71 @@
   </div>
 </nav>
 
-<main class='examine_data_main'>
+<main>
 
-  <div>
-    <h2 class='center'>Deaths By Year</h2>
-    <p class='center'>(years are 2012-2014)</p>
-    <form id='by_year_form'>
-      <label>Enter Year: </label><input type="text" id='a' name='a'>
-      <p>Result: <span id="result">?</span></p>
-      <div class='center_button'>
-        <button id='year_data'>Get Data!</button>
-      </div>
-    </form>
+  <h1 class='center examine_heading'>Examine the Data</h1>
+
+  <p class='center'>Here the user will be able to make some basic queries into the data</p>
+
+  <hr>
+
+  <div class='examine_data_main'>
+
+    <div>
+      <h2 class='center'>Deaths By Year</h2>
+      <p class='center'>(years are 2012-2014)</p>
+      <form id='by_year_form'>
+        <label>Enter Year: </label><input type="text" id='a' name='a'>
+        <p>Result: <span id="result">?</span></p>
+        <div class='center_button'>
+          <button id='year_data'>Get Data!</button>
+        </div>
+      </form>
+    </div>
+
+    <div>
+      <h2 class='center'>Death Type</h2>
+      <p class='center'>(Accidental, Homicide, Suicide, Undetermined)</p>
+      <form id='by_type_form'>
+        <label>Death Type: </label><input type="text" id='b' name='b'>
+        <p>Result: <span id="result_death_type">?</span></p>
+        <div class='center_button'>
+          <button id='type_data'>Get Data!</button>
+        </div>
+      </form>
+    </div>
+
+    places: Farm, Home, Street, Trade, Residential institution
+    Industrial/construction
+    
+    <div>
+      <h2 class='center'>Location</h2>
+      <p class='center'>()</p>
+      <form id='by_type_form'>
+        <label>Location: </label><input type="text" id='b' name='b'>
+        <p>Result: <span id="result_death_type">?</span></p>
+        <div class='center_button'>
+          <button id='type_data'>Get Data!</button>
+        </div>
+      </form>
+    </div>
+
   </div>
 
-  <div>
-    <h2 class='center'>Death Type</h2>
-    <p class='center'>(Accidental, Homicide, Suicide, Undetermined)</p>
-    <form id='by_type_form'>
-      <label>Death Type: </label><input type="text" id='b' name='b'>
-      <p>Result: <span id="result_death_type">?</span></p>
-      <div class='center_button'>
-        <button id='type_data'>Get Data!</button>
-      </div>
-    </form>
-  </div>
-  
-  <div>
+  <div class='examine_pic_one_area'>
+
   </div>
 
 </main>
+
+<footer>
+    Copyright &copy; 2017 Mike Cuddy Productions
+    <br/>
+    <p>
+        <a href="https://github.com/ravenusmc"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+        <a href="https://twitter.com/"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/mcuddy1/"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a>
+    </p>
+</footer>
 
 {% endblock %}
