@@ -49,22 +49,9 @@
 
     <div>
       <h2 class='center'>Death Type</h2>
-      <p class='form_fix center'>(Accidental, Homicide, Suicide, Undetermined)</p>
+      <p class='center'>(Accidental, Homicide, Suicide, Undetermined)</p>
       <form id='by_type_form'>
         <label>Death Type: </label><input type="text" id='b' name='b'>
-        <p>Result: <span id="result_death_type">?</span></p>
-        <div class='center_button'>
-          <button id='type_data'>Get Data!</button>
-        </div>
-      </form>
-    </div>
-    
-    <div>
-      <h2 class='center'>Location</h2>
-      <p class='location center'>(Farm, Home, Street, Trade/service area, Residential institution
-    Industrial/construction)</p>
-      <form id='by_type_form'>
-        <label>Location: </label><input type="text" id='b' name='b'>
         <p>Result: <span id="result_death_type">?</span></p>
         <div class='center_button'>
           <button id='type_data'>Get Data!</button>
@@ -74,18 +61,22 @@
 
     <div>
       <h2 class='center'>Location</h2>
-      <p class='location center'>(Farm, Home, Street, Trade/service area, Residential institution
-    Industrial/construction)</p>
+      <p class='center'>(Please make a selection from the box)</p>
       <form id='by_location_form'>
         <label>Location: </label>
         <input type="text" id='c' name='c' list='locations'>
           <datalist id='locations'>
             <option value='Farm' label='Farm'>
-              <option value='Home' label='Home'>
+            <option value='Home' label='Home'>
+            <option value='Street'>
+            <option value='Trade/service area'>
+            <option value='Residential institution'>
+            <option value='Street'>
+            <option value='Industrial/construction'>
           </datalist>
-        <p>Result: <span id="result_death_type">?</span></p>
+        <p>Result: <span id="result_location">?</span></p>
         <div class='center_button'>
-          <button id='type_data'>Get Data!</button>
+          <button id='location_data'>Get Data!</button>
         </div>
       </form>
     </div>

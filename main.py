@@ -98,6 +98,17 @@ def by_type():
         return jsonify(result = count)
     return jsonify({'error' : 'Missing Data'})
 
+@app.route('/by_location',methods=['POST'])
+def by_location():
+    #Receiving the data from the ajax call
+    c = request.form['c']
+    print('C:', c)
+    if c:
+        # gun = Gundata()
+        # count = gun.type_count(b)
+        return jsonify(result = c)
+    return jsonify({'error' : 'Missing Data'})
+    
 # set the secret key. keep this really secret:
 app.secret_key = 'n3A\xef(\xb0Cf^\xda\xf7\x97\xb1x\x8e\x94\xd5r\xe0\x11\x88\x1b\xb9'
 

@@ -59,8 +59,24 @@ document.querySelector('#type_data').addEventListener('click', function(){
     alert('Please enter in either: Accidental, Homicide, Suicide, Undetermined');
     location.reload();
   }
-  
 })
+
+//This is the ajax request to get the number of gun deaths by location.
+$(document).ready(function(){
+  $('#by_location_form').bind('submit', function(event){
+    event.preventDefault();
+    $.ajax({
+      data: {
+        c: $('#c').val()
+      },
+      type: 'POST',
+      url: '/by_location',
+      success: function(data){
+        $('#result_location').text(data.result).show();
+      }
+    });
+  });
+});
 
 
 
