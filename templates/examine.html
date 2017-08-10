@@ -84,10 +84,59 @@
   </div>
 
   <div class='examine_pic_one_area'>
+  </div>
+
+  <div class='examine_data_main'>
+
+    <div class='first_div'>
+        <h2 class='center'>Death By Type and Year</h2>
+        <p class='form_fix center'>(years are 2012-2014)</p>
+        <form id='by_year_type_form'>
+          <label>Enter Year: </label><input type="text" id='year' name='year_one'>
+          <label>Death Type: </label>
+          <input type="text" id='type' name='type' list='death_type'>
+          <datalist id='death_type'>
+            <option value='Accidental'>
+            <option value='Homicide'>
+            <option value='Suicide'>
+            <option value='Trade/service area'>
+          </datalist>
+          <p>Result: <span id="year_type_result">?</span></p>
+          <div class='center_button'>
+            <button id='year_data'>Get Data!</button>
+          </div>
+        </form>
+      </div>
+
+      <div class='first_div'>
+        <h2 class='center'>Deaths By Year</h2>
+        <p class='form_fix center'>(years are 2012-2014)</p>
+        <form id='by_year_form'>
+          <label>Enter Year: </label><input type="text" id='a' name='a'>
+          <p>Result: <span id="result">?</span></p>
+          <div class='center_button'>
+            <button id='year_data'>Get Data!</button>
+          </div>
+        </form>
+      </div>
+
+      <div class='first_div'>
+        <h2 class='center'>Deaths By Year</h2>
+        <p class='form_fix center'>(years are 2012-2014)</p>
+        <form id='by_year_form'>
+          <label>Enter Year: </label><input type="text" id='a' name='a'>
+          <p>Result: <span id="result">?</span></p>
+          <div class='center_button'>
+            <button id='year_data'>Get Data!</button>
+          </div>
+        </form>
+      </div>
 
   </div>
 
 </main>
+
+<hr>
 
 <footer>
     Copyright &copy; 2017 Mike Cuddy Productions

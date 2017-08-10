@@ -348,7 +348,7 @@ input {
   .examine_pic_one_area {
     margin-left: 2%;
     margin-right: 2%;
-
+    height: 250px;
   }
 
 }

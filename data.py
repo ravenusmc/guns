@@ -23,7 +23,15 @@ class Gundata():
         count = len(deaths_by_type)
         return count
 
+    #This method will return the number of gun deatahs by location that the user selects. 
+    def location(self, location):
+        #getting the areas where the location matches the what the user entered. 
+        location = self.__data[self.__data.place == location]
+        #Getting the count 
+        count = len(location)
+        return count
+
 
 
 # test = Gundata()
-# test.year_count(2014)
+# test.year_count('Home')

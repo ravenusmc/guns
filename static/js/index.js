@@ -78,6 +78,24 @@ $(document).ready(function(){
   });
 });
 
+//This is the ajax request to get the number of gun deaths by year and type.
+$(document).ready(function(){
+  $('#by_year_type_form').bind('submit', function(event){
+    event.preventDefault();
+    $.ajax({
+      data: {
+        d: $('#year').val(),
+        e: $('#type').val()
+      },
+      type: 'POST',
+      url: '/by_year_type',
+      success: function(data){
+        $('#year_type_result').text(data.result).show();
+      }
+    });
+  });
+});
+
 
 
 
