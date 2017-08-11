@@ -79,7 +79,6 @@ def logout():
 def by_year():
     a = request.form['a']
     a = int(a)
-    print(type(a))
     if a:
         gun = Gundata()
         count = gun.year_count(a)
@@ -114,14 +113,12 @@ def by_location():
 def by_year_type():
     #Receiving the data from the ajax call
     d = request.form['d']
+    d = int(d)
     e = request.form['e']
-    print('D', d)
-    print('E', e)
-    if d:
-        # gun = Gundata()
-        # count = gun.location(c)
-        # print("COUNT:", count)
-        return jsonify(result = d)
+    if d and e:
+        gun = Gundata()
+        count = gun.year_type(d,e)
+        return jsonify(result = count)
     return jsonify({'error' : 'Missing Data'})
     
 # set the secret key. keep this really secret:

@@ -31,7 +31,8 @@ class Gundata():
         count = len(location)
         return count
 
-
-
-# test = Gundata()
-# test.year_count('Home')
+    #This method will allow the user to look up gun deaths by year and type
+    #notice that I wrote all my code in one line which I could have done above.
+    def year_type(self, year, death_type):
+        count = len(self.__data[(self.__data.year == year) & (self.__data.intent == death_type)])
+        return count 
