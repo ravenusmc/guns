@@ -75,8 +75,10 @@ def logout():
     return redirect(url_for('login'))
 
 ### The routes below here will calculate the data science aspect part of this project ###
+
 @app.route('/by_year', methods=['POST'])
 def by_year():
+    #Receiving the data from the ajax call
     a = request.form['a']
     a = int(a)
     if a:
@@ -119,6 +121,17 @@ def by_year_type():
         gun = Gundata()
         count = gun.year_type(d,e)
         return jsonify(result = count)
+    return jsonify({'error' : 'Missing Data'})
+
+@app.route('/by_year_location', methods=['POST'])
+def by_year_location():
+    #Receiving the data from the ajax call
+    f = request.form['f']
+    f = int(f)
+    g = request.form['g']
+    if f and g:
+        gun = Gundata()
+        return jsonify(result = f)
     return jsonify({'error' : 'Missing Data'})
     
 # set the secret key. keep this really secret:

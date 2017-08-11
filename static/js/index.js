@@ -96,6 +96,24 @@ $(document).ready(function(){
   });
 });
 
+//This is the ajax request to get the number of gun deaths by year and location.
+$(document).ready(function(){
+  $('#by_location_and_year').bind('submit', function(event){
+    event.preventDefault();
+    $.ajax({
+      data: {
+        f: $('#year_two').val(),
+        g: $('#location_two').val()
+      },
+      type: 'POST',
+      url: '/by_year_location',
+      success: function(data){
+        $('#year_location_result').text(data.result).show();
+      }
+    });
+  });
+});
+
 
 
 
