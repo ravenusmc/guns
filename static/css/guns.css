@@ -233,6 +233,15 @@ input {
   margin-top: 10px;
 }
 
+.examine_pic_two_area {
+  background-image: url(https://source.unsplash.com/8jiSRvrwBFY);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 500px;
+  margin-top: 10px;
+}
+
 /* CSS for media queries */
 @media only all and (max-width: 768px){
 
