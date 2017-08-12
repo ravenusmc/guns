@@ -131,7 +131,8 @@ def by_year_location():
     g = request.form['g']
     if f and g:
         gun = Gundata()
-        return jsonify(result = f)
+        count = gun.year_location(f,g)
+        return jsonify(result = count)
     return jsonify({'error' : 'Missing Data'})
     
 # set the secret key. keep this really secret:
