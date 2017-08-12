@@ -1,4 +1,6 @@
-#This file will contain the class and methods that will handle the data queries.
+#This file will contain the class and methods that will handle the data queries for the 
+#examine data page. 
+
 import numpy as np
 import pandas as pd 
 
