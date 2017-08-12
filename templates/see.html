@@ -1,17 +1,19 @@
 {% extends 'base.html' %}
 
 {% block body %}
+<link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.12.6.min.css" type="text/css" />      
+<script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.6.min.js"></script>
+<script type="text/javascript">
+    Bokeh.set_log_level("info");
+</script>
 
 <nav class="navbar-fixed navbar navbar-toggleable-md navbar-inverse bg-inverse">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="#">Guns</a>
+  <a class="navbar-brand" href="/home">Guns</a>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/home">Home</a>
-      </li>
       <li class="nav-item">
         <a class="nav-link" href="/examine">Examine Data</a>
       </li>
@@ -25,10 +27,32 @@
   </div>
 </nav>
 
-<main>
-  <h1>test</h1>
+<main class='see_main'>
+
+  <h1 class='center'>See the Data</h1>
+  <p class='center'>Here the user will visually see the graphs of the data</p>
+
+  <hr>
+
+  <div class='year_graph_area'>
+    <h1>Graph of deaths by year</h1>
+    <!-- <div class="test bk-root"> -->
+    <div class='graph_fix'>
+      <div class="bk-plotdiv" id="1154c37f-4f4c-4bcc-ace0-d1a24e5c18ab"></div>
+    </div>
+  </div>
+
 </main>
 
+<footer>
+    Copyright &copy; 2017 Mike Cuddy Productions
+    <br/>
+    <p>
+        <a href="https://github.com/ravenusmc"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+        <a href="https://twitter.com/"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/mcuddy1/"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a>
+    </p>
+</footer>
 
-
+<script src='{{ url_for('static', filename='js/byYearGraph.js') }}'></script>
 {% endblock %}

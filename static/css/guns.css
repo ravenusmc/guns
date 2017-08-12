@@ -242,6 +242,22 @@ input {
   margin-top: 10px;
 }
 
+/* CSS for See.html page */
+.see_main {
+  margin-top: 80px;
+}
+
+.year_graph_area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.graph_fix {
+  font-size:10pt;
+  position:relative;
+}
+
 /* CSS for media queries */
 @media only all and (max-width: 768px){
 
