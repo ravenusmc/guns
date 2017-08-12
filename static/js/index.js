@@ -114,6 +114,24 @@ $(document).ready(function(){
   });
 });
 
+//This is the ajax request to get the number of gun deaths by year and age.
+$(document).ready(function(){
+  $('#by_year_age').bind('submit', function(event){
+    event.preventDefault();
+    $.ajax({
+      data: {
+        year: $('#year_age').val(),
+        age: $('#age').val()
+      },
+      type: 'POST',
+      url: '/by_year_age',
+      success: function(data){
+        $('#year_age_result').text(data.result).show();
+      }
+    });
+  });
+});
+
 
 
 

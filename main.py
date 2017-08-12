@@ -134,6 +134,19 @@ def by_year_location():
         count = gun.year_location(f,g)
         return jsonify(result = count)
     return jsonify({'error' : 'Missing Data'})
+
+@app.route('/by_year_age', methods=['POST'])
+def by_year_age():
+    year = request.form['year']
+    age = request.form['age']
+    year = int(year)
+    age = int(age)
+    if year and age: 
+        gun = Gundata()
+        count = gun.year_age(year, age)
+        return jsonify(result = count)
+    return jsonify({'error' : 'Missing Data'})
+
     
 # set the secret key. keep this really secret:
 app.secret_key = 'n3A\xef(\xb0Cf^\xda\xf7\x97\xb1x\x8e\x94\xd5r\xe0\x11\x88\x1b\xb9'
