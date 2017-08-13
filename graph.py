@@ -1,5 +1,6 @@
 #This file will handle all of the data for the graphs on the see.html page. 
 from bokeh.plotting import figure, output_file, show
+from bokeh.models import CategoricalColorMapper, HoverTool
 import numpy as np
 import pandas as pd 
 
@@ -14,7 +15,7 @@ class Graphs():
         #This is where 
         output_file('by_year.html')
         #Setting up the dimensions of the graph.
-        p = figure(plot_width=400, plot_height=400)
+        p = figure(title="Deaths by Year", plot_width=400, plot_height=400)
         #setting up a list for the specific years and number of deaths. 
         years = [2012,2013,2014]
         number_of_deaths = []
@@ -28,8 +29,52 @@ class Graphs():
             #increasing the count by one. 
             count += 1
         #rendering the graph 
-        p.line(years, number_of_deaths, line_width=2)
+        p.line(years, number_of_deaths, legend="Deaths", line_color='blue', line_width=2)
+        p.xaxis.axis_label = "Year"
+        p.yaxis.axis_label = "Deaths"
+        hover = p.select_one(HoverTool)
+        hover.tooltips = [('Year', '@years'),
+            ('Deaths', '@number_of_deaths')]
         show(p)
 
 test = Graphs()
 test.by_year()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
