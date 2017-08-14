@@ -17,11 +17,10 @@ class Graphs():
         output_file('by_year.html')
         #setting up a list for the specific years and number of deaths. 
         years = [2012,2013,2014]
-        years = pd.to_datetime(years)
         number_of_deaths = []
         #Setting up the dimensions of the graph and its labels.
         plot = figure(title="Deaths by Year", x_axis_label='Years', y_axis_label='Deaths', plot_width=400, 
-            plot_height=400, x_axis_type="datetime")
+            plot_height=400)
         #This count variable will hold the number of loops as well as position in the list
         count = 0
         while count < 3:
