@@ -37,6 +37,8 @@ def login():
 #This function will bring the user to the home page.
 @app.route('/home')
 def home():
+    if 'username' not in session:
+        return redirect(url_for('signup'))
     return render_template('home.html')
 
 #This function brings the user to the sign up page.
@@ -60,12 +62,16 @@ def signup():
 #This function will bring the user to the page to examine the data. 
 @app.route('/examine')
 def examine():
+    if 'username' not in session:
+        return redirect(url_for('signup'))
     return render_template('examine.html')
 
 #This function will take the user to the page to visualize the data.
 @app.route('/see')
 def see():
-   return render_template('see.html') 
+    if 'username' not in session:
+        return redirect(url_for('signup'))
+    return render_template('see.html') 
 
 #This function is what will log out the user.
 @app.route('/sign_out')
