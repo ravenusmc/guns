@@ -6,6 +6,9 @@
 <script type="text/javascript">
     Bokeh.set_log_level("info");
 </script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.7.0/nv.d3.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.7.0/nv.d3.min.js"></script>
 
 <nav class="navbar-fixed navbar navbar-toggleable-md navbar-inverse bg-inverse">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,6 +45,11 @@
     </div>
   </div>
 
+  <div class='year_graph_area'>
+    <h1>Graph of deaths by Type</h1>
+    <div id="discretebarchart"><svg style="width:400px;height:400px;"></svg></div>
+  </div>
+
 </main>
 
 <footer>
@@ -55,4 +63,5 @@
 </footer>
 
 <script src='{{ url_for('static', filename='js/byYearGraph.js') }}'></script>
+<script src='{{ url_for('static', filename='js/bytype.js') }}'></script>
 {% endblock %}

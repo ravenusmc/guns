@@ -258,6 +258,10 @@ input {
   position:relative;
 }
 
+nav {
+  z-index: 10;
+}
+
 /* CSS for media queries */
 @media only all and (max-width: 768px){
 
