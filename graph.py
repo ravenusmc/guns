@@ -39,6 +39,98 @@ class Graphs():
         #This line will launch the graph 
         # show(plot)
 
+    def by_type(self):
+        output_file = open('by_type.html', 'w')
+        #These lists will hold the data. 
+        death_type = ['Accidental', 'Homicide', 'Suicide', 'Undetermined']
+        count_of_type = []
+        chart = discreteBarChart(name='discreteBarChart', height=400, width=400)
+        #This count variable will hold the number of loops as well as position in the list
+        count = 0
+        while count < 4:
+            count_of_deaths = len(self.__data[self.__data.intent == death_type[count]])
+            #Appending the count of the death type to the list 
+            count_of_type.append(count_of_deaths)
+            #increasing the count by 1 
+            count += 1 
+        xdata = death_type
+        ydata = count_of_type
+        chart.add_serie(y=ydata, x=xdata)
+        chart.buildhtml()
+        output_file.write(chart.htmlcontent)
+        output_file.close()
+
+    def by_place(self):
+        output_file = open('by_location.html', 'w')
+        #These lists will hold the data. 
+        location = ['Farm', 'Home', 'Street', 'Trade/service area','Residential institution','Street','Industrial/construction' ]
+        location_count = []
+        chart = discreteBarChart(name='discreteBarChart', height=500, width=800)
+        #This count variable will hold the number of loops as well as position in the list
+        count = 0
+        while count < 7:
+            count_of_deaths = len(self.__data[self.__data.place == location[count]])
+            #Appending the count of the death type to the list 
+            location_count.append(count_of_deaths)
+            #increasing the count by 1 
+            count += 1 
+        xdata = location
+        ydata = location_count
+        chart.add_serie(y=ydata, x=xdata)
+        chart.buildhtml()
+        output_file.write(chart.htmlcontent)
+        output_file.close()
+
+    def by_age(self):
+        output_file = open('by_age.html', 'w')
+        age = ['0-10','11-20','21-30','31-40','41-50','51-60','61-70','71-80','81-90','91-100']
+        chart = discreteBarChart(name='discreteBarChart', height=500, width=800)
+        count = 0 
+        #These numbers will make up the individual age groups. Essentially my way of creating a bin. 
+        ones = 0
+        teens = 0
+        twent = 0
+        thirty = 0
+        forty = 0 
+        fifty = 0
+        sixty = 0
+        seventy = 0
+        eighty = 0
+        ninety = 0
+        while count < 101:
+            count_of_deaths = len(self.__data[self.__data.age == count])
+            if count <= 10:
+                ones = ones + count_of_deaths
+            elif count <= 20:
+                teens = teens + count_of_deaths
+            elif count <= 30:
+                twent = twent + count_of_deaths
+            elif count <= 40:
+                thirty = thirty + count_of_deaths
+            elif count <= 50:
+                forty = forty + count_of_deaths
+            elif count <= 60:
+                fifty = fifty + count_of_deaths
+            elif count <= 70:
+                sixty = sixty + count_of_deaths
+            elif count <= 80:
+                seventy = seventy + count_of_deaths
+            elif count <= 90:
+                eighty = eighty + count_of_deaths
+            elif count <= 100:
+                ninety = ninety + count_of_deaths
+            count += 1
+        age_count = [ones, teens, twent, thirty, forty, fifty, sixty, seventy, eighty, ninety]
+        xdata = age
+        ydata = age_count
+        chart.add_serie(y=ydata, x=xdata)
+        chart.buildhtml()
+        output_file.write(chart.htmlcontent)
+        output_file.close()
+
+
+
+
     #This method will show the deaths by type. I tried to use bokeh to make the bar graph for type but 
     #it simply would not work.
     # def by_type(self):
@@ -64,30 +156,10 @@ class Graphs():
     #         line_width=2)
     #     show(plot)
 
-    def by_type(self):
-        output_file = open('by_type.html', 'w')
-        #These lists will hold the data. 
-        death_type = ['Accidental', 'Homicide', 'Suicide', 'Undetermined']
-        # death_type = ['Accidental', 'Homicide', 'Suicide', 'Undetermined']
-        count_of_type = []
-        chart = discreteBarChart(name='discreteBarChart', height=400, width=400)
-        #This count variable will hold the number of loops as well as position in the list
-        count = 0
-        while count < 4:
-            count_of_deaths = len(self.__data[self.__data.intent == death_type[count]])
-            #Appending the count of the death type to the list 
-            count_of_type.append(count_of_deaths)
-            #increasing the count by 1 
-            count += 1 
-        xdata = death_type
-        ydata = count_of_type
-        chart.add_serie(y=ydata, x=xdata)
-        chart.buildhtml()
-        output_file.write(chart.htmlcontent)
-        output_file.close()
+
 
 test = Graphs()
-test.by_type()
+test.by_age()
 
 
 # hover = p.select_one(HoverTool)
