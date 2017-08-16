@@ -246,9 +246,11 @@ input {
 /* CSS for See.html page */
 .see_main {
   margin-top: 80px;
+  margin-left: 3%;
+  margin-right: 3%;
 }
 
-.year_graph_area {
+.graph_area {
   display: flex;
   flex-direction: column;
   align-items: center;

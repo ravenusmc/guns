@@ -39,25 +39,37 @@
 
   <div class='graph_area'>
     <h1>Graph of deaths by year</h1>
-    <!-- <div class="test bk-root"> -->
     <div class='graph_fix'>
         <div class="bk-plotdiv" id="e8cf8e4b-a42a-4d4d-b18f-d4fdaf50a965"></div>
     </div>
   </div>
+
+  <hr>
 
   <div class='graph_area'>
     <h1>Graph of deaths by type</h1>
     <div id="typebarchart"><svg style="width:400px;height:400px;"></svg></div>
   </div>
 
+  <hr>
+
   <div class='graph_area'>
     <h1>Graph of deaths by location</h1>
     <div id="locationbarchart"><svg style="width:800px;height:500px;"></svg></div>
   </div>
 
+  <hr>
+
   <div class='graph_area'>
-    <h1>Graph of deaths by location</h1>
-    <div id="locationbarchart"><svg style="width:800px;height:500px;"></svg></div>
+    <h1>Graph of deaths by age</h1>
+    <div id="Agebarchart"><svg style="width:800px;height:500px;"></svg></div>
+  </div>
+
+  <hr>
+
+  <div class='graph_area'>
+    <h1>Graph of deaths by race</h1>
+    <div id="racebarchart"><svg style="width:800px;height:500px;"></svg></div>
   </div>
 
 </main>
@@ -76,4 +88,6 @@
 <script src='{{ url_for('static', filename='js/byYearGraph.js') }}'></script>
 <script src='{{ url_for('static', filename='js/bytype.js') }}'></script>
 <script src='{{ url_for('static', filename='js/byLocation.js') }}'></script>
+<script src='{{ url_for('static', filename='js/byAge.js') }}'></script>
+<script src='{{ url_for('static', filename='js/byRace.js') }}'></script>
 {% endblock %}

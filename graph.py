@@ -39,6 +39,7 @@ class Graphs():
         #This line will launch the graph 
         # show(plot)
 
+    #This method will show the user deaths by type
     def by_type(self):
         output_file = open('by_type.html', 'w')
         #These lists will hold the data. 
@@ -60,6 +61,7 @@ class Graphs():
         output_file.write(chart.htmlcontent)
         output_file.close()
 
+    #This method will show the deaths by location
     def by_place(self):
         output_file = open('by_location.html', 'w')
         #These lists will hold the data. 
@@ -81,6 +83,7 @@ class Graphs():
         output_file.write(chart.htmlcontent)
         output_file.close()
 
+    #This method will show the user deaths by age. 
     def by_age(self):
         output_file = open('by_age.html', 'w')
         age = ['0-10','11-20','21-30','31-40','41-50','51-60','61-70','71-80','81-90','91-100']
@@ -97,6 +100,7 @@ class Graphs():
         seventy = 0
         eighty = 0
         ninety = 0
+        #I use the while loop to go through the ages in the csv file. 
         while count < 101:
             count_of_deaths = len(self.__data[self.__data.age == count])
             if count <= 10:
@@ -128,7 +132,25 @@ class Graphs():
         output_file.write(chart.htmlcontent)
         output_file.close()
 
-
+    def by_race(self):
+        output_file = open('by_race.html', 'w')
+        race = ['White', 'Black', 'Asian/Pacific Islander', 'Native American/Native Alaskan', 'Hispanic']
+        race_count = []
+        chart = discreteBarChart(name='raceBarChart', height=500, width=800)
+        count = 0 
+        while count < 5:
+            count_of_deaths = len(self.__data[self.__data.race == race[count]])
+            race_count.append(count_of_deaths)
+            count += 1
+        #I build this list twice because Native American/Native Alaskan was taking to much space up 
+        #on my graph.
+        race = ['White', 'Black', 'Asian/Pacific Islander', 'Native American', 'Hispanic']
+        xdata = race
+        ydata = race_count
+        chart.add_serie(y=ydata, x=xdata)
+        chart.buildhtml()
+        output_file.write(chart.htmlcontent)
+        output_file.close()
 
 
     #This method will show the deaths by type. I tried to use bokeh to make the bar graph for type but 
@@ -159,7 +181,7 @@ class Graphs():
 
 
 test = Graphs()
-test.by_age()
+test.by_race()
 
 
 # hover = p.select_one(HoverTool)

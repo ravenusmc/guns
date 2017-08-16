@@ -8,14 +8,14 @@
     </head>
     <body>
         
-    <div id="discretebarchart"><svg style="width:800px;height:500px;"></svg></div>
+    <div id="racebarchart"><svg style="width:800px;height:500px;"></svg></div>
 
 
     <script>
 
 
 
-                data_discretebarchart=[{"yAxis": "1", "key": "Serie 1", "values": [{"x": "Farm", "y": 470}, {"x": "Home", "y": 60486}, {"x": "Street", "y": 11151}, {"x": "Trade/service area", "y": 3439}, {"x": "Residential institution", "y": 203}, {"x": "Street", "y": 11151}, {"x": "Industrial/construction", "y": 248}]}];
+                data_racebarchart=[{"yAxis": "1", "key": "Serie 1", "values": [{"y": 66237, "x": "White"}, {"y": 23296, "x": "Black"}, {"y": 1326, "x": "Asian/Pacific Islander"}, {"y": 917, "x": "Native American"}, {"y": 9022, "x": "Hispanic"}]}];
 
 
             nv.addGraph(function() {
@@ -23,7 +23,7 @@
 
         chart.margin({top: 30, right: 60, bottom: 20, left: 60});
 
-        var datum = data_discretebarchart;
+        var datum = data_racebarchart;
 
 
 
@@ -37,10 +37,10 @@
 
 
 
-            d3.select('#discretebarchart svg')
+            d3.select('#racebarchart svg')
             .datum(datum)
             .transition().duration(500)
-            .attr('width', 900)
+            .attr('width', 800)
             .attr('height', 500)
             .call(chart);
 
