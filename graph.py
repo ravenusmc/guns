@@ -152,6 +152,41 @@ class Graphs():
         output_file.write(chart.htmlcontent)
         output_file.close()
 
+    def by_police(self):
+        output_file = open('by_police.html', 'w')
+        police = ['Not police killed', 'Police killed']
+        police_count = []
+        chart = discreteBarChart(name='policeBarChart', height=500, width=800)
+        count = 0 
+        while count < 2:
+            count_of_deaths = len(self.__data[self.__data.police == count ])
+            police_count.append(count_of_deaths)
+            count += 1
+        xdata = police
+        ydata = police_count
+        chart.add_serie(y=ydata, x=xdata)
+        chart.buildhtml()
+        output_file.write(chart.htmlcontent)
+        output_file.close()
+
+    def by_education(self):
+        output_file = open('by_educ.html', 'w')
+        education = ['> High School', 'High School', 'Some College', 'Graduated College', 'Not Available']
+        death_count = []
+        chart = discreteBarChart(name='educBarChart', height=500, width=800)
+        count = 1
+        while count < 6:
+            count_of_deaths = len(self.__data[self.__data.education == count ])
+            death_count.append(count_of_deaths)
+            count += 1
+        xdata = education
+        ydata = death_count
+        chart.add_serie(y=ydata, x=xdata)
+        chart.buildhtml()
+        output_file.write(chart.htmlcontent)
+        output_file.close()
+
+
 
     #This method will show the deaths by type. I tried to use bokeh to make the bar graph for type but 
     #it simply would not work.
@@ -181,7 +216,7 @@ class Graphs():
 
 
 test = Graphs()
-test.by_race()
+test.by_education()
 
 
 # hover = p.select_one(HoverTool)

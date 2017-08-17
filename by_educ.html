@@ -8,14 +8,14 @@
     </head>
     <body>
         
-    <div id="racebarchart"><svg style="width:800px;height:500px;"></svg></div>
+    <div id="educbarchart"><svg style="width:800px;height:500px;"></svg></div>
 
 
     <script>
 
 
 
-                data_racebarchart=[{"yAxis": "1", "key": "Serie 1", "values": [{"y": 66237, "x": "White"}, {"y": 23296, "x": "Black"}, {"y": 1326, "x": "Asian/Pacific Islander"}, {"y": 917, "x": "Native American"}, {"y": 9022, "x": "Hispanic"}]}];
+                data_educbarchart=[{"yAxis": "1", "values": [{"y": 21823, "x": "> High School"}, {"y": 42927, "x": "High School"}, {"y": 21680, "x": "Some College"}, {"y": 12946, "x": "Graduated College"}, {"y": 1369, "x": "Not Available"}], "key": "Serie 1"}];
 
 
             nv.addGraph(function() {
@@ -23,7 +23,7 @@
 
         chart.margin({top: 30, right: 60, bottom: 20, left: 60});
 
-        var datum = data_racebarchart;
+        var datum = data_educbarchart;
 
 
 
@@ -37,7 +37,7 @@
 
 
 
-            d3.select('#racebarchart svg')
+            d3.select('#educbarchart svg')
             .datum(datum)
             .transition().duration(500)
             .attr('width', 800)

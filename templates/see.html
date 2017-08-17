@@ -72,6 +72,13 @@
     <div id="racebarchart"><svg style="width:800px;height:500px;"></svg></div>
   </div>
 
+  <hr>
+
+  <div class='graph_area'>
+    <h1>Graph of deaths by police</h1>
+    <div id="policebarchart"><svg style="width:800px;height:500px;"></svg></div>
+  </div>
+
 </main>
 
 <footer>
@@ -90,4 +97,5 @@
 <script src='{{ url_for('static', filename='js/byLocation.js') }}'></script>
 <script src='{{ url_for('static', filename='js/byAge.js') }}'></script>
 <script src='{{ url_for('static', filename='js/byRace.js') }}'></script>
+<script src='{{ url_for('static', filename='js/byPolice.js') }}'></script>
 {% endblock %}
