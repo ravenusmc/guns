@@ -18,6 +18,8 @@ This is a project that will examine gun deaths in the U.S. from 2012-2014. As us
 3. Pandas-0.18.1
 4. Numpy-1.11.0
 5. MySQL-5.6.26
+6. This project uses NVD3 and please follow the instructions here to ensure that you have it installed:
+http://python-nvd3.readthedocs.io/en/latest/introduction.html
 
 ### Operation
 
