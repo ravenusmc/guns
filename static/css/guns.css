@@ -244,6 +244,31 @@ input {
 }
 
 /* CSS for See.html page */
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+ul li {
+  list-style-type: none;
+  display: inline;
+}
+
+.graph_links {
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+}
+
+.graph_links:hover {
+  text-decoration: none;
+  color: rgb(242,146,12);
+}
+
+
+
 .see_main {
   margin-top: 80px;
   margin-left: 3%;

@@ -32,12 +32,25 @@
 
 <main class='see_main'>
 
-  <h1 class='center'>See the Data</h1>
-  <p class='center'>Here the user will visually see the graphs of the data</p>
+  <section>
+    <h1 class='center'>See the Data</h1>
+    <p class='center'>Here the user will visually see the graphs of the data</p>
+    <div>
+      <ul>
+        <li><a class='graph_links' href="#year">Year</a></li>&nbsp;&nbsp;&nbsp;
+        <li><a class='graph_links' href="#type">Type</a></li>&nbsp;&nbsp;&nbsp;
+        <li><a class='graph_links' href="#location">Location</a></li>&nbsp;&nbsp;&nbsp;
+        <li><a class='graph_links' href="#age">Age</a></li>&nbsp;&nbsp;&nbsp;
+        <li><a class='graph_links' href="#race">Race</a></li>&nbsp;&nbsp;&nbsp;
+        <li><a class='graph_links' href="#police">Police</a></li>&nbsp;&nbsp;&nbsp;
+        <li><a class='graph_links' href="#education">Education</a></li>
+      </ul>
+    </div>
+  </section>
 
   <hr>
 
-  <div class='graph_area'>
+  <div id='year' class='graph_area'>
     <h1>Graph of deaths by year</h1>
     <div class='graph_fix'>
         <div class="bk-plotdiv" id="e8cf8e4b-a42a-4d4d-b18f-d4fdaf50a965"></div>
@@ -46,37 +59,44 @@
 
   <hr>
 
-  <div class='graph_area'>
+  <div id='type' class='graph_area'>
     <h1>Graph of deaths by type</h1>
     <div id="typebarchart"><svg style="width:400px;height:400px;"></svg></div>
   </div>
 
   <hr>
 
-  <div class='graph_area'>
+  <div id='location' class='graph_area'>
     <h1>Graph of deaths by location</h1>
     <div id="locationbarchart"><svg style="width:800px;height:500px;"></svg></div>
   </div>
 
   <hr>
 
-  <div class='graph_area'>
+  <div id='age' class='graph_area'>
     <h1>Graph of deaths by age</h1>
     <div id="Agebarchart"><svg style="width:800px;height:500px;"></svg></div>
   </div>
 
   <hr>
 
-  <div class='graph_area'>
+  <div id='race' class='graph_area'>
     <h1>Graph of deaths by race</h1>
     <div id="racebarchart"><svg style="width:800px;height:500px;"></svg></div>
   </div>
 
   <hr>
 
-  <div class='graph_area'>
+  <div id='police' class='graph_area'>
     <h1>Graph of deaths by police</h1>
     <div id="policebarchart"><svg style="width:800px;height:500px;"></svg></div>
+  </div>
+
+  <hr>
+
+  <div id='education' class='graph_area'>
+    <h1>Graph of deaths by Education</h1>
+    <div id="educbarchart"><svg style="width:800px;height:500px;"></svg></div>
   </div>
 
 </main>
@@ -98,4 +118,5 @@
 <script src='{{ url_for('static', filename='js/byAge.js') }}'></script>
 <script src='{{ url_for('static', filename='js/byRace.js') }}'></script>
 <script src='{{ url_for('static', filename='js/byPolice.js') }}'></script>
+<script src='{{ url_for('static', filename='js/byEduc.js') }}'></script>
 {% endblock %}
