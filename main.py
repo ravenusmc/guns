@@ -64,14 +64,16 @@ def signup():
 def examine():
     if 'username' not in session:
         return redirect(url_for('signup'))
-    return render_template('examine.html')
+    username = session['username']
+    return render_template('examine.html', name=username)
 
 #This function will take the user to the page to visualize the data.
 @app.route('/see')
 def see():
     if 'username' not in session:
         return redirect(url_for('signup'))
-    return render_template('see.html') 
+    username = session['username']
+    return render_template('see.html', name=username) 
 
 #This function is what will log out the user.
 @app.route('/sign_out')
