@@ -215,15 +215,6 @@ class Graphs():
 
 
 
-test = Graphs()
-test.by_education()
-
-
-# hover = p.select_one(HoverTool)
-# hover.tooltips = [('Year', '@years'),
-#     ('Deaths', '@number_of_deaths')]
-
-
 
 
 

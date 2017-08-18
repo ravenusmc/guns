@@ -32,6 +32,6 @@ website.
 
 # Preview
 
-To see a video that talks about this project please go here: Coming Soon
+To see a video that talks about this project please go here: https://www.youtube.com/watch?v=O5D8NKkDYGI&feature=em-upload_owner
 
-Blog entry: Coming Soon
+Blog entry: https://wordpress.com/post/codingsaga.wordpress.com/298
